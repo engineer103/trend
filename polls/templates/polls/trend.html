@@ -1,0 +1,22 @@
+<h1>Trend Submit</h1>
+
+<form action="{% url 'polls:trend_submit' %}" method="post">
+	{% csrf_token %}
+	<label>Algo Name:</label>
+	<input type="text" name="name">
+	<br>
+	<label>Signal:</label>
+	<input type="text" name="signal">
+	<br>
+	<label>Trade:</label>
+	<input type="text" name="trade">
+	<br>
+	<label>Ticker:</label>
+	<input type="text" name="ticker">
+	<br>
+	
+	<input type="submit" value="Trend Submit">	
+</form>
+
+<br>
+<a href="{% url 'polls:algos' %}">Algo table</a>

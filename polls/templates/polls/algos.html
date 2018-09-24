@@ -1,0 +1,14 @@
+<table style="width:100%">
+  <tr>
+    <th>Algo Name</th>
+    <th>Average PnL</th>
+  </tr>
+  {% for algo in algos %}
+    <tr>
+      <td><a href="{% url 'polls:algo_detail' algo.id %}">{{ algo.name }}</a></td>
+      <td>{{ algo.pnl.pnl__avg }}</td> 
+    </tr>
+  {% endfor %}
+</table>
+<br>
+<a href="{% url 'polls:trend' %}">Submit Algo</a>

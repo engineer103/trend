@@ -1,0 +1,22 @@
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<div id="myDiv">
+  
+</div>
+<br>
+<a href="{% url 'polls:algos' %}">Algo table</a>
+<script>
+  var trace1 = {
+    x: JSON.parse("{{ xs }}"),
+    y: JSON.parse("{{ ys }}"),
+    mode: 'markers'
+  };
+
+  console.log(trace1)
+
+  var data = [ trace1 ];
+
+  var layout = {};
+
+  Plotly.newPlot('myDiv', data, layout);
+</script>
